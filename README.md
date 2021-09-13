@@ -1,5 +1,3 @@
-# clean-clean-bankAPP
-
 # clean-bankAPP
 A bank application demo that enables users to create a account, deposit ,withdraw, transer, check balance and apply for a loan.
 # clean-bankAPP
