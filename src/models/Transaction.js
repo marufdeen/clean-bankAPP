@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(255),
       allowNull: false,
     }, 
+    cardId: {
+      type: DataTypes.STRING(255),
+      allowNull: false,
+    }, 
     amount: {
       type: DataTypes.STRING(255),
       allowNull: false,
@@ -39,27 +43,21 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'Reference number type field cannot be empty'
         }
       }
-    },
-    accountName: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
-      validate: {
-        notEmpty: {
-          args: true,
-          msg: 'Account name field cannot be empty'
-        }
-      }
-    },
+    }, 
   }, {
     freezeTableName: true,
   });
   Transaction.associate = function(models) {
     // associations can be defined here
-    Transaction.belongsTo(models.user, {
+   /*  Transaction.belongsTo(models.User, {
       foreignKey: 'userId',
-      as: 'user',
-      onDelete: 'CASCADE',
+      as: 'cards',
     });
+    Transaction.belongsTo(models.Card, {
+      foreignKey: 'cardId',
+      as: 'cards',
+      onDelete: 'CASCADE',
+    }); */
   };
   return Transaction;
 };

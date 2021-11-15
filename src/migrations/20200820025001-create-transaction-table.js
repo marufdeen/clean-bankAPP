@@ -10,6 +10,10 @@ module.exports = {
       type: Sequelize.STRING(255),
       allowNull: false,
     }, 
+    cardId: {
+      type: Sequelize.STRING(255),
+      allowNull: false,
+    }, 
     amount: {
       type: Sequelize.STRING(255),
       allowNull: false,
@@ -39,17 +43,7 @@ module.exports = {
           msg: 'Reference number type field cannot be empty'
         }
       }
-    },
-    accountName: {
-      type: Sequelize.STRING(255),
-      allowNull: false,
-      validate: {
-        notEmpty: {
-          args: true,
-          msg: 'Account name field cannot be empty'
-        }
-      }
-    },
+    }, 
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE
   }),

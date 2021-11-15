@@ -39,10 +39,6 @@ module.exports = {
         }
       }
     },
-    accountBalance: {
-      type: Sequelize.STRING(255),
-      allowNull: true
-    },
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE
   }),

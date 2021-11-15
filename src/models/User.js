@@ -38,19 +38,22 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'Password field cannot be empty'
         }
       }
-    },  
-    accountBalance: {
-      type: DataTypes.STRING(255),
-      allowNull: true
     }
-  }, {
-    freezeTableName: true,
-  });
+  }, {});
+ 
   User.associate = function (models) {
-  // associations can be defined here
-    User.hasMany(models.transaction, {
-      foreignKey: 'userId'
-    });
+    // associations can be defined here
+    /* User.hasMany(models.Transaction, {
+      foreignKey: 'userId',
+      as: 'transactions',
+      onDelete: 'CASCADE',
+    }); *//* 
+    User.hasMany(models.Card, {
+      foreignKey: 'userId',
+      as: 'cards',
+      onDelete: 'CASCADE',
+    }); */
   };
+  
   return User;
 };
