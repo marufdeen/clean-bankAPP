@@ -48,16 +48,19 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true,
   });
   Transaction.associate = function(models) {
-    // associations can be defined here
-   /*  Transaction.belongsTo(models.User, {
+    // associations can be defined here 
+    
+    Transaction.belongsTo(models.user, {
       foreignKey: 'userId',
-      as: 'cards',
+      as: 'users',
+      onDelete: 'CASCADE',
     });
-    Transaction.belongsTo(models.Card, {
+    Transaction.belongsTo(models.card, {
       foreignKey: 'cardId',
       as: 'cards',
       onDelete: 'CASCADE',
-    }); */
+    }); 
+
   };
   return Transaction;
 };

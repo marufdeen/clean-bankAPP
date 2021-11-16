@@ -38,17 +38,17 @@ module.exports = (sequelize, DataTypes) => {
       freezeTableName: true,
     });
   Card.associate = function (models) {
-/*     // associations can be defined here
-    Card.hasMany(models.Transaction, {
+     // associations can be defined here
+    Card.hasMany(models.transaction, {
       foreignKey: 'cardId',
-      as: 'cards',
+      as: 'card',
       onDelete: 'CASCADE',
     });
-    Card.belongsTo(models.User, {
+    Card.belongsTo(models.user, {
       foreignKey: 'userId',
       as: 'users',
       onDelete: 'CASCADE',
-    });*/
+    });
   }; 
     return Card;
   };
